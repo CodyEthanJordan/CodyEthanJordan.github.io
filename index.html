@@ -7,6 +7,7 @@
 		<script type="text/javascript" async
   src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
+<script src="https://wzrd.in/standalone/function-plot@1.15.0"></script>
 		<style type="text/css">
 		
 			div.bar {
@@ -19,9 +20,18 @@
 		</style>
     </head>
     <body>
+	<div id="quadratic"></div>
 	 \(ax^2 + bx + c = 0\) 
 	
          <script type="text/javascript">
+		 
+		 functionPlot({
+  target: '#quadratic',
+  data: [{
+    fn: 'x^2'
+  }]
+})
+		 
             d3.select("body").append("p").text("Hello World!");
 			
 			var dataset = [],
