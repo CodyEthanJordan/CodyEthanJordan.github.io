@@ -4,6 +4,9 @@
         <meta charset="utf-8">
         <title>Learning D3.js</title>
         <script type="text/javascript" src="//d3js.org/d3.v3.min.js"></script>
+		<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 		<style type="text/css">
 		
 			div.bar {
@@ -16,6 +19,8 @@
 		</style>
     </head>
     <body>
+	 \(ax^2 + bx + c = 0\) 
+	
          <script type="text/javascript">
             d3.select("body").append("p").text("Hello World!");
 			
@@ -28,14 +33,31 @@
 				dataset.push(Math.random() * 10);
 			}
 
-			d3.select("body").selectAll("div")
-				.data(dataset)
-				.enter()
-				.append("div")
-				.attr("class", "bar")
-				.style("height", function(d) {
-					return (d * 10) + "px";
-				});
+			var svg = d3.select("body").append("svg");
+			
+			var w = 500;
+			var h = 500;
+			
+			svg.attr("width", w)
+				.attr("height", h);
+   
+			var circles = svg.selectAll("circle")
+                 .data(dataset)
+                 .enter()
+                 .append("circle");
+				 
+			circles.attr("cx", function(d, i) {
+				return (i / dataset.length * w);
+			})
+		   .attr("cy",  function(d, i) {
+				return (d*d*3);
+			})
+		   .attr("fill", "rgba(128, 0, 128, 0.75)")
+		   
+		   .attr("r", function(d) {
+				return d*3;
+		   });
+
         </script>
     </body>
 </html>
