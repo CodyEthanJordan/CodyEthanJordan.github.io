@@ -27,23 +27,38 @@
 
 		<h2>The Problem</h2>
 
+		<p>For this tutorial we'll be considering one dimensional boundary value problems of the form \(y'' + p(x)y = f(x)\). Specifically the problem</p>
+		
+		<center>\(y'' + 4y = 0\)</center>
+		<center>\(y(0)=-2 \;\;\;\; y(\frac {\pi} {4})=10\)</center>
+		
+		
+		<p>If you need a bit of <a href="http://tutorial.math.lamar.edu/Classes/DE/BoundaryValueProblem.aspx">a refresher</a> on differential equations go check it out.  Since this is a relativly simple problem we can find the exact solution analytically.  Because of that we'll be able to check our work and do a brief analysis on how well the approximation works before applying FEM to more complex problems.  The exact answer is:</p>
 
-
-	<span class="big" id="scrubbing-horizontal">20</span>
+		<center>\(y(x) = -2cos(2x) + 10sin(2x)\)</center>
+		
+		<br>
+		<div id="exact-solution" align="center"></div>
 	
-	<div id="quadratic"></div>
+	
+	
+	
+	
+	<span class="big" id="scrubbing-horizontal">20</span>
 	 \(ax^2 + bx + c = 0\) 
 	
          <script type="text/javascript">
 		 
 		 new Scrubbing ( document.querySelector ( '#scrubbing-horizontal') )
 		 
-		 functionPlot({
-  target: '#quadratic',
-  data: [{
-    fn: 'x^2'
-  }]
-})
+		functionPlot({
+		  target: '#exact-solution',
+		  yDomain: [-2, 10],
+		  xDomain: [0, 0.78540],
+		  data: [{
+			fn: '-2*cos(2*x)+10*sin(2*x)'
+		  }]
+		})
 		 
             d3.select("body").append("p").text("Hello World!");
 			
