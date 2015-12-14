@@ -2,28 +2,41 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Learning D3.js</title>
+        <title>Introduction to Finite Element Method</title>
         <script type="text/javascript" src="//d3js.org/d3.v3.min.js"></script>
-		<script type="text/javascript" async
-  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-<script src="https://wzrd.in/standalone/function-plot@1.15.0"></script>
-		<style type="text/css">
+		<script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+		<script src="https://wzrd.in/standalone/function-plot@1.15.0"></script>
+		<script src="Scrubbing.js\dist\Scrubbing.min.js"></script>
 		
-			div.bar {
-				display: inline-block;
-				width: 10px;
-				height: 75px;
-				background-color: teal;
-			}
+		<link rel="stylesheet" href="style.css" type="text/css">
 		
-		</style>
     </head>
     <body>
+		<h1>Introduction to the Finite Element Method in 1 Dimension</h1>
+
+		<p>There are plenty of great resources for learning the basis for the Finite Element Method (from here easily shortened to FEM), but this is going to be a simpler interactive introduction to how it works. Inspired by some of the works of <a href="http://worrydream.com/">Brett Victor</a> I think that FEM can be explained in a much more intuitive manner using interactive visualization. Before we get started though, let's look at some of the excellent and more traditional introductions.</p>
+
+		<ul>
+		  <li>For a direct, step-by-step and practical guide check out <a href="http://www4.ncsu.edu/~zhilin/TEACHING/MA587/chap6.pdf">Zhilin Li of NC State.</a></li>
+		  <li><a href="http://www.math.udel.edu/~fjsayas/anIntro2FEM.pdf">Francisco–Javier Sayas</a> and his "A gentle introduction to the Finite Element Method" provides an indredible way to understand how FEM works.</li>
+		  <li>I haven't had too much chance to look at <a href="http://www.idi.ntnu.no/~elster/tdt24/tdt24-f09/gagan-fem.pdf">Professor Elster of NTNU</a> myself, but definitely worth a look.</li>
+		  <li>And most of all I'd like to thank and reccomend <a href="https://people.sc.fsu.edu/~jpeterson/">Dr. Janet Peterson</a> of FSU for getting me started</li>
+		</ul>
+
+		<p>This is going to be a simple introduction, as visual possible, intended for those who have some familiarity with calculus and programming who are interested in understanding a way to get started on numerical techniques.  After this, feel free to delve deeper into some of those more detailed resources up above.  You’re encouraged to follow along, so get out pencil and paper and boot up Octave/MATLAB.</p>
+
+		<h2>The Problem</h2>
+
+
+
+	<span class="big" id="scrubbing-horizontal">20</span>
+	
 	<div id="quadratic"></div>
 	 \(ax^2 + bx + c = 0\) 
 	
          <script type="text/javascript">
+		 
+		 new Scrubbing ( document.querySelector ( '#scrubbing-horizontal') )
 		 
 		 functionPlot({
   target: '#quadratic',
