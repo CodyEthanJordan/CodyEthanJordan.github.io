@@ -58,11 +58,6 @@
 		
 		<h2>The Weak Formulation</h2>
 	
-	
-	
-	<span class="big" id="scrubbing-horizontal">20</span>
-	 \(ax^2 + bx + c = 0\) 
-	
          <script type="text/javascript">
 		 
 		 var BasicAdapter = {
@@ -83,17 +78,14 @@
 		  functionPlot(func);
 		},
 		end : function () {}
-};
+		};
 
-new Scrubbing ( document.querySelector ( '#scrubbing-horizontal'), {
-	adapter  : BasicAdapter
-});
+		new Scrubbing ( document.querySelector ( '#scrubbing-horizontal'), {
+			adapter  : BasicAdapter
+		});
 		
-
 		 
-		 var thing = 2;
-		 
-		 var func = {
+		var func = {
 		  target: '#exact-solution',
 		  yDomain: [0, 0.15],
 		  xDomain: [0, 1],
@@ -103,42 +95,6 @@ new Scrubbing ( document.querySelector ( '#scrubbing-horizontal'), {
 		}
 		 
 		functionPlot(func)
-		 
-            d3.select("body").append("p").text("Hello World!");
-			
-			var dataset = [],
-				n = 100,
-				a = 1,
-				b = 2;
-
-			for (var k = 0; k < 100; k++) {
-				dataset.push(Math.random() * 10);
-			}
-
-			var svg = d3.select("body").append("svg");
-			
-			var w = 500;
-			var h = 500;
-			
-			svg.attr("width", w)
-				.attr("height", h);
-   
-			var circles = svg.selectAll("circle")
-                 .data(dataset)
-                 .enter()
-                 .append("circle");
-				 
-			circles.attr("cx", function(d, i) {
-				return (i / dataset.length * w);
-			})
-		   .attr("cy",  function(d, i) {
-				return (d*d*3);
-			})
-		   .attr("fill", "rgba(128, 0, 128, 0.75)")
-		   
-		   .attr("r", function(d) {
-				return d*3;
-		   });
 
         </script>
     </body>
