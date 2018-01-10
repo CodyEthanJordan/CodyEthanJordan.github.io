@@ -7,9 +7,9 @@
 		<script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 		<script src="https://wzrd.in/standalone/function-plot@1.15.0"></script>
 		<script src="Scrubbing.js\dist\Scrubbing.min.js"></script>
-		
+
 		<link rel="stylesheet" href="style.css" type="text/css">
-		
+
     </head>
     <body>
 		<h1>Introduction to the Finite Element Method in 1 Dimension</h1>
@@ -27,39 +27,39 @@
 		<h2>The Problem</h2>
 
 		<p>For this tutorial we'll be considering one dimensional boundary value problems of the form \(y'' + p(x)y = f(x)\). Specifically the problem</p>
-		
+
 		<center>\(y'' = 1\)</center>
 		<center>\(y(0)=0 \;\;\;\; y(1)=0\)</center>
-		
-		
+
+
 		<p>If you need a bit of <a href="http://tutorial.math.lamar.edu/Classes/DE/BoundaryValueProblem.aspx">a refresher</a> on differential equations go check it out.  Since this is a relativly simple problem we can find the exact solution analytically.  Because of that we'll be able to check our work and do a brief analysis on how well the approximation works before applying FEM to more complex problems.  The exact answer is:</p>
 
 		<center>\(\frac {x(1-x)} {2}\)</center>
-		
+
 		<br>
 		<div id="exact-solution" align="center"></div>
-		
+
 		<p>Drag the number to change the graph: <span class="big" id="scrubbing-horizontal">20</span></p>
-	
+
 		<p>In order to figure out how we can appoximate the solution from the initial problem there are 5 major steps.
-		
+
 		<ul>
 		  <li>Construct the weak formulation - as in, using mathematatics to restate the problem</li>
 		  <li>Generate a mesh - break down the domain into individual sections</li>
 		  <li>Choose a basis function - this is where the approximation happens, representing the problem using simpler building blocks</li>
 		  <li>Assemble the matrix - we then use the mesh and basis function to restate the problem as a matrix and use linear algebra to solve</li>
 		  <li>Solve and plot - this is where we actually get the approximate answer to the original question</li>
-		</ul>	
+		</ul>
 		</p>
-		
+
 		<h2>The Weak Formulation</h2>
-		
+
 		<p>Info on weak</p>
-		
+
 		<h2>The Weak Formulation</h2>
-	
+
          <script type="text/javascript">
-		 
+
 		 var BasicAdapter = {
 		init : function () {},
 		start : function (a) {
@@ -67,13 +67,13 @@
 		},
 		change : function (a, b) {
 			a.node.textContent = b;
-			
+
 			func = {
 		  target: '#exact-solution',
 		  yDomain: [0, 0.15],
 		  xDomain: [0, 1],
 		  data: [{
-			fn: 'x * (1-x) * 10 /' + document.getElementById("scrubbing-horizontal").innerHTML 
+			fn: 'x * (1-x) * 10 /' + document.getElementById("scrubbing-horizontal").innerHTML
 		  }]};
 		  functionPlot(func);
 		},
@@ -83,8 +83,8 @@
 		new Scrubbing ( document.querySelector ( '#scrubbing-horizontal'), {
 			adapter  : BasicAdapter
 		});
-		
-		 
+
+
 		var func = {
 		  target: '#exact-solution',
 		  yDomain: [0, 0.15],
@@ -93,7 +93,7 @@
 			fn: 'x * (1-x) /' + document.getElementById("scrubbing-horizontal").innerHTML
 		  }]
 		}
-		 
+
 		functionPlot(func)
 
         </script>
