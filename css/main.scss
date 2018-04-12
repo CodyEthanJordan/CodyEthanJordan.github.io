@@ -28,3 +28,19 @@ $subdued-border:   rgba($bg-color-darker, 0.5);
   "base",
   "syntax-highlighting"
 ;
+
+.right-image
+{
+    margin: 0 auto;
+    float: right;
+    max-height: 370px;
+    max-width: 370px;
+}
+
+.left-image
+{
+    margin: 0 auto;
+    float: left;
+    max-height: 370px;
+    max-width: 370px;
+}
