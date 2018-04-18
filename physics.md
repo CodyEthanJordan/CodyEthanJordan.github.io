@@ -3,7 +3,7 @@ layout: page
 title: Physics Projects
 ---
 
-Details about physics projects.
+Details about physics projects. Still under construction.
 
 ### Ultra-High Vacuum Chamber and XUV Ultrafast Laser
 ![Ultra-High Vacuum Chamber](/assets/images/ultraHighVacuumChamber.jpg){: .right-image}
@@ -13,13 +13,6 @@ I am currently a member of <a href="http://sciences.ucf.edu/physics/vaidalab/">P
 - LabView
 - Creating combined hardware and software solutions
 - Working with ultrafast lasers
-
-### Zeeman Splitting
-![1T Electromagnet](/assets/images/magnet.JPG){: .left-image}
-As part of our capstone lab project at UCF I designed an experiment to measure the Zeeman effect. I researched Zeeman's original experiment and found comparable lab setups from other universities. One of the main challenges was that there is not a pre-packaged lab setup for this kind of measurement at the university. 
-
-- Project planning and budgeting
-- High precision-optical measurements
 
 ### Characterizing Radioactive Elements
 ![Scintillator Tube](/assets/images/scintillator.JPG){: .right-image}

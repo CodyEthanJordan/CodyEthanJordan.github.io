@@ -3,7 +3,7 @@ layout: page
 title: Software Projects
 ---
 
-Highlighting some past and current software projects I've been involved in.
+Highlighting some past and current software projects I've been involved in. Still have a few more to add.
 
 ## Developer for Bucher-Emhart Glass
 ![Bucher-Emhart Glass Logo](/assets/images/bucherEmhartGlass.png){: .left-image}
@@ -17,13 +17,3 @@ I developed software for the <a href="http://www.bucheremhartglass.com/products/
 ## Demographic Data Analysis
 ![UCF Logo](/assets/images/ucfLogo.png){: .right-image}
 I was contracted to analyze demographic data for students at UCF. I used Python to conduct the analysis and Jupyter Notebooks for visualizing and sharing the results.  
-
-## parhelion
-![parhelion Screenshot](/assets/images/parhelionScreenshot.png){: .left-image}
-<a href="https://github.com/CodyEthanJordan/parhelion">repo</a>
-
-## Out of the Dungeon
-
-## Roots of Unity Tutorial
-
-## 2D Finite Element Method
