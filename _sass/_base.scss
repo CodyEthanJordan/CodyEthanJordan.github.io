@@ -68,13 +68,7 @@ article {
     margin-left: 0;
   }
 
-  ul > li:before {
-    position: absolute;
-    content: "▪";
-    color: $alt-color;
-    left: -1.15em;
-  }
-
+  
   pre, code {
     background-color: $background-color;
   }

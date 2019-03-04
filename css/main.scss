@@ -44,3 +44,22 @@ $subdued-border:   rgba($bg-color-darker, 0.5);
     max-height: 300px;
     max-width: 370px;
 }
+
+/* thanks to http://www.grokcode.com/programmer-portfolio/ */
+
+ul.skillList {
+  list-style-type: none;
+}
+
+ul.skillList li {
+    font-size: .75em;
+    line-height: 1em;
+    list-style-position: outside;
+    background: #888;
+    display: inline-block;
+    color: #fff;
+    padding: 6px;
+    border-radius: 3px;
+    margin: 0 5px 5px 0;
+    text-indent: 0;
+}
