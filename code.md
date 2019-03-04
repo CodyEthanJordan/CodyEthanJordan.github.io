@@ -3,17 +3,26 @@ layout: page
 title: Software Projects
 ---
 
-Intro
+A few interesting software projects I've done.
+
 
 ## Developer on Scout for Bucher-Emhart Glass
 ![Bucher-Emhart Glass Logo](/assets/images/bucherEmhartGlass.png){: .left-image}
 <ul class="skillList">
 <li>C#</li>
+<li>WinRT / UWP</li>
+<li>MVVM Pattern</li>
 <li>JenkinsCI</li>
 <li>MongoDB</li>
+<li>WIX Toolset</li>
 </ul>
 
-Description, Scout link
+[Scout](https://www.emhartglass.com/SCOUT) is the software that controls
+Bucher-Emhart Glass' line of Flex inspection machines. These process a stream of
+~400 pieces of glassware per minute, using computer vision to sort good bottles
+from bad.
+
+My main role was 
 
 ## Monochromator Controller
 ![UHV setup](/assets/images/monochromator/labSetup.jpg){: .left-image}
