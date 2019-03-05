@@ -1,9 +1,9 @@
 # Site settings
 title: "Cody Ethan Jordan"
 author: "Cody Ethan Jordan"
-description: "Portfolio for physics and programming projects."
+description: "Portfolio for physics and programming projects. General thoughts. <a href='/'>Back to home</a>"
 keywords: "Physics, Programming, Game Design, Unity3D, Quantum Computing, Quantum Information, Portflio, CV"
-biography: "I am an interdisciplinary researcher with a background in physics and programming. <a href='assets/CJordan_CV.pdf'>Read my CV</a> or check through my <a href='/blog'>blog</a> and <a href='/physics'>projects</a> for more details."
+biography: "I am an apisiring physicist with a background in and programming. <a href='assets/CJordan_CV.pdf'>Read my CV</a> or check through my <a href='/blog'>blog</a> and <a href='/code'>projects</a> for more details."
 colophon: ""
 
 baseurl: ""
