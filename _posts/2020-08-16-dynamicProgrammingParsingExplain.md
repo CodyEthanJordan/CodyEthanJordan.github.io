@@ -2,6 +2,7 @@
 layout: post
 title:  "Using Dynamic Programming for Parsing Puzzle"
 categories: software
+published: false
 ---
 
 "Dynamic programming" can seem a bit mysterious for folks just starting out, so I want to walk through a [few different ways](https://en.wikipedia.org/wiki/Multiple_representations_(mathematics_education)) to visualize the problem to try to give a few ways to understand whats going on here.
@@ -20,3 +21,4 @@ For example "424" can be parsed as "4\|24" -> "DX", or as "4\|2\|4" -> "DBD", me
 
 ## The Solution
 
+`throw new NotImplementedException()`

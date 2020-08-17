@@ -6,7 +6,7 @@ categories: software
 
 Managing Ubuntu machines I'd been upgrading some servers to Ubuntu 18.04 but came across something...odd
 
-![Demons](/assets/images/computers/cursed.png){: .left-image}
+![Demons](/assets/images/computers/cursed.jpg){: .left-image}
 
 A machine which would not boot, and when I tried to boot in to the recovery mode I was presented with a series of increasingly disturbing visions. First, some UI weirdness, and then having to type in the administrator password a dozen times before it stuck.
 
