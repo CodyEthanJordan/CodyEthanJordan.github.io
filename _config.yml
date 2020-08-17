@@ -1,17 +1,32 @@
-# Site settings
-title: "Cody Ethan Jordan"
-author: "Cody Ethan Jordan"
-description: "Portfolio for physics and programming projects. General thoughts. <a href='/'>Back to home</a>"
-keywords: "Physics, Programming, Game Design, Unity3D, Quantum Computing, Quantum Information, Portflio, CV"
-biography: "I am an apisiring physicist with a background in and programming. <a href='assets/CJordan_CV.pdf'>Read my CV</a> or check through my <a href='/blog'>blog</a> and <a href='/code'>projects</a> for more details."
-colophon: ""
+title: CodyEthanJordan
+description: "Portfolio and Blog"
+author:
+  name: "Cody Jordan"
+  email: ""
+  url: "https://CodyEthanJordan.com"
 
-baseurl: ""
-url: "http://codyethanjordan.com"
+baseurl: /
 
-github_username: CodyEthanJordan
-linkedin_username: CodyEthanJordan
+source: .
+destination: ./_site
+permalink: /:title
+paginate: 3
+paginate_path: /page/:num/
 
-markdown: kramdown
-highlighter: rouge
-permalink: /blog/:year/:month/:day/:title/
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+future: true
+plugins:
+  - jekyll-seo-tag
+  - jekyll-paginate
+  - jekyll-sitemap
+
+# Custom variables
+owner : "CodyEthanJordan"
+year : "2020"
