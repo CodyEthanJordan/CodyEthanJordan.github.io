@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Presenting on pygame for the 2018 UCF Rasberry Pi Jam"
-categories: software
+categories: software, teaching
 ---
 
 UCF held a [Raspberry Pi workshop](https://sites.google.com/site/ucfraspberryjam/home) for the first time. One of the speakers dropped out at the last minute and I was roped in to give a workshop on pygame.
