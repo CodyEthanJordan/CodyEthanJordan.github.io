@@ -9,12 +9,12 @@ mathjax: true
 
 Continuing the long tradition of mathematicians and computer scientists fantasizing about being kidnapped by supranatural forces I was looking at the ten hats riddle the other day. If you haven't seen it before there is a version under [Induction puzzles on Wikipedia](https://en.wikipedia.org/wiki/Induction_puzzles#Ten-Hat_Variant) as well as a [fun animated version](https://www.youtube.com/watch?v=N5vJSNXPEwA) by Ted-Ed. Overall the riddle asks a group to create a strategy given the following situation
 
-> A mad wizard captures 10 people and presents to them a challenge. Each will lined up facing forwards so that they can only see the people in front of them, and each will be given either a red or a blue hat. This means they can see the colors of the hats of everyone farther down the line, but not their own or anyone behind them. Then starting at the back of the line each must guess the color of their hat else be slain. The 10 prisoners will have time to agree upon a plan beforehand.
+> A mad wizard captures 10 people and presents to them a challenge. Each will be lined up facing forwards so that they can only see the people in front of them, and each will be given either a red or a blue hat. This means they can see the colors of the hats of everyone farther down the line, but not their own or anyone behind them. Then starting at the back of the line each must guess the color of their hat else be slain. The 10 prisoners will have time to agree upon a plan beforehand.
 
 > What is the best strategy they can come up with to win this challenge?
 
 
-Give that as a starting point, what could they do if instead the wizard's challenge had 3 colors of hat?
+Give that as a starting point, what could they do if instead the wizard's challenge had 3 colors of hat? After this we build up towards the ultimate challenge, the N-person k-color hat challenge where the wizard is listening to your plan and some of you are colorblind.
 
 
 ### Analyzing The Two-Color Answer
@@ -44,7 +44,7 @@ So with two possibilities in order to have absolute certainty of his own hat col
 
 So what if there were three colors of hat?
 
-> A mad wizard captures 10 people and presents to them a challenge. Each will lined up facing forwards so that they can only see the people in front of them, and each will be given either a red, blue, or green hat. This means they can see the colors of the hats of everyone farther down the line, but not their own or anyone behind them. Then starting at the back of the line each must guess the color of their hat else be slain. The 10 prisoners will have time to agree upon a plan beforehand. What is their best plan and their chances of survival?
+> A mad wizard captures 10 people and presents to them a challenge. Each will be lined up facing forwards so that they can only see the people in front of them, and each will be given a red, blue, or green hat. This means they can see the colors of the hats of everyone farther down the line, but not their own or anyone behind them. Then starting at the back of the line each must guess the color of their hat else be slain. The 10 prisoners will have time to agree upon a plan beforehand. What is their best plan and their chances of survival?
 
 
 To solve this one lets generalize the idea of counting if there an odd or even number of blue hats to instead use modular arithmetic. So in the two color variant say the following is agreed upon
@@ -82,7 +82,7 @@ Lets look at a few ways that the riddle could be expanded for fun.
 
 Lets say in this variant the evil wizard uses his scrying orb to listen in on your plan, and can use this information in order to choose the distribution of hats.
 
-> A mad wizard captures 10 people and presents to them a challenge. Each will lined up facing forwards so that they can only see the people in front of them, and each will be given either a red or a blue hat. This means they can see the colors of the hats of everyone farther down the line, but not their own or anyone behind them. Then starting at the back of the line each must guess the color of their hat else be slain. The 10 prisoners will have time to agree upon a plan beforehand, however the wizard is listening in and will know this plan as well. Given that the wizard can choose the distribution of the hats the day of the challenge what is strategy that maximizes how many escape on average? How does this affect the person at the front of the line, and are there any alternative plans which counter the wizard's advantage?
+> A mad wizard captures 10 people and presents to them a challenge. Each will be lined up facing forwards so that they can only see the people in front of them, and each will be given either a red or a blue hat. This means they can see the colors of the hats of everyone farther down the line, but not their own or anyone behind them. Then starting at the back of the line each must guess the color of their hat else be slain. The 10 prisoners will have time to agree upon a plan beforehand, however the wizard is listening in and will know this plan as well. Given that the wizard can choose the distribution of the hats the day of the challenge what is strategy that maximizes how many escape on average? How does this affect the person at the front of the line, and are there any alternative plans which counter the wizard's advantage?
 
 
 So in general if they use the same plan as before the 9 prisoners at the end of the line still have the same 100% chance to guess correctly, however the first prisoner is dead. Because the wizard knows what scheme (deterministic computable function) he is going to use to make his guess, the wizard can simply choose the opposite color and guarantee his demise. In general whatever function the prisoners agree on will need to be deterministic because they won't have any way to communicate during the test and will need a solid plan in order to do better the chance.
@@ -98,30 +98,57 @@ In this scenario the first two prisoners would have a 50/50 chance of guessing c
 - Is there any plan which gives all prisoners an equal chance to survive no matter their place in line? If so what? And if not, can you prove no such plan exists?
 
 
-### Colorblind
+### Some prisoners are Colorblind
 
-Some chance of error
+Take the same problem as before except $b$ individuals are colorblind, which for this purpose we will say means they have no idea what the colors are of the hats in front of them.
+
+> A mad wizard captures 10 people and presents to them a challenge. Each will be lined up facing forwards so that they can only see the people in front of them, and each will be given either a red or a blue hat. This means they can see the colors of the hats of everyone farther down the line, but not their own or anyone behind them. Then starting at the back of the line each must guess the color of their hat else be slain. The 10 prisoners will have time to agree upon a plan beforehand, however some number of their group are colorblind and cannot tell apart any colors. The prisoners that are colorblind know that they are and can tell everyone else as part of their plan, and are able to choose what order they line up in. What is their best strategy in this situation and how many survive on average? How does this change if they cannot choose what order they are in?
+
+
+To start look at $b=1$ where a single colorblind individual is part of the group. If they can choose their order that prisoner could be last because then they can't see any hats, and are working entirely off of hearing information from the guesses before them. A key observation is that in this model a colorblind prisoner in position $n$ doesn't have access to any information from observation of $i > n$, which is why the original scheme works.
+
+In order to see this play out imagine $b=2$ and both of them are at the very end of the line. For the first 8 prisoners the plan would continue as normal, however the second to last fellow will have a situation. Even with 8 bits of information from prisoners before him there isn't enough to solve the equation. Forced to guess they are at a 50/50, however the next colorblind person isn't so bad off. If they hear the sound of a deadly lightning bolt they know that the person behind them was wrong, and otherwise the know that their guess was right. Either way they still have the full 9 bits of information they need in order to correctly solve for their hat color.
+
+What this means is that this scheme is robust to $b=1$ and for every additional colorblind person they will incur an additional 50/50 shot alongside with the 50/50 that the first prisoner is taking. This means that the expected survivor count $S(prisoners, colorblind)$ is 
+
+$S(P=10, C=b) = \frac{1}{2}(1 + \min(b-1, 0)) + (10 - 1 - \min(b-1,0))$ 
+
+If however the prisoners are instead ordered randomly and do not get to choose what order they are in things become trickier. Lets look at a few situations where $b=1$ to see how this plays out. If the colorblind prisoner ends up being the first one to guess then they have no way to calculate the parity and just have to guess. Half the time they will get it right and the plan will go off without a hitch, the other half of the time the second prisoner is in a bit of a pickle. Because the parity bit is wrong they will have the wrong answer and be killed with 100% certainty.
+
+So what does the third prisoner know? He has heard the supposed parity bit from the first prisoner, but then knows that the second prisoner has just been killed. This could be due to one of two circumstances
+
+- the prisoner immediately behind him was colorblind and was forced to guess, but the parity bit was correct
+- the first prisoner was colorblind and the parity bit was wrong, which lead to the 2nd prisoner's death
+
+Both of these circumstances are equally likely so it doesn't matter what he goes with. If he rolls the dice and trusts the parity bit then in one case he will be dead, and the other case he will be fine. Looking at the information theory this can be explained because whether or not the colorblind prisoner is first or second is again two possibilities, representing an additional bit of information which is unknown in the system. So this increases the amount of information that he requires and this depriving the third prisoner of the same certainty they would have in the original plan. 
+
+From there on out things return to normal. The fourth prisoner will either hear the death of the 3rd, and thus know that the parity bit is wrong and be able to account for that, or hear that they're fine in which case the plan is still on save for the unfortunate death of the colorblind prisoner in position 2. Information theoretically this is because if prisoner 3 dies that gives out two bits of information. Putting this together the expected survivor count with a colorblind prisoner at the start $S\[colorblind\ positions=indexing\ set\](prisoners, colorblind)$ is the sum of half the time the plan working as normal despite the interference, and another half the time killing prisoner 2 automatically but then returning to normal
+
+$S\[cb={1}\](P=10, C=1) = \frac{1}{2} S(P=10) + \frac{1}{2} = \frac{1}{2} 9.5 + \frac{1}{2} (\frac{1}{2} + 0 + (10 - 2)) = 9$
+
+Whats interesting is how even being at the start of the line that doesn't affect the outcome, as the expected survival count is 9 people no matter where the colorblind prisoner is.
+
 
 ### N people, k colors
 
 This is a direct generalization. What strategy can be used and what are the expected survival rates for N participants in a situation where there are k colors of hats?
 
-> A mad wizard captures N people and presents to them a challenge. Each will lined up facing forwards so that they can only see the people in front of them, and each will be given one of k colors of hat. This means they can see the colors of the hats of everyone farther down the line, but not their own or anyone behind them. Then starting at the back of the line each must guess the color of their hat else be slain. The N prisoners will have time to agree upon a plan beforehand.
+> A mad wizard captures N people and presents to them a challenge. Each will be lined up facing forwards so that they can only see the people in front of them, and each will be given one of k colors of hat. This means they can see the colors of the hats of everyone farther down the line, but not their own or anyone behind them. Then starting at the back of the line each must guess the color of their hat else be slain. The N prisoners will have time to agree upon a plan beforehand.
 
 ### Repeated games
 
 Consider a variant where if anyone dies then the survivors are put back into the dungeon and are forced to play the game again the next day, and so on until either everyone is dead or they complete the challenge with everyone surviving. What are the expected number of survivors in this case.
 
-> A mad wizard captures N people and presents to them a challenge. Each will lined up facing forwards so that they can only see the people in front of them, and each will be given one of k colors of hat. This means they can see the colors of the hats of everyone farther down the line, but not their own or anyone behind them. Then starting at the back of the line each must guess the color of their hat else be slain, and if anyone is killed the survivors will be forced to play the same game the next day. The N prisoners will have time to agree upon a plan beforehand. What is the best plan they can come up with and how many survivors will make it on average? How do these values change if the wizard is able to listen in on their plan each night?
+> A mad wizard captures N people and presents to them a challenge. Each will be lined up facing forwards so that they can only see the people in front of them, and each will be given one of k colors of hat. This means they can see the colors of the hats of everyone farther down the line, but not their own or anyone behind them. Then starting at the back of the line each must guess the color of their hat else be slain, and if anyone is killed the survivors will be forced to play the same game the next day. The N prisoners will have time to agree upon a plan beforehand. What is the best plan they can come up with and how many survivors will make it on average? How do these values change if the wizard is able to listen in on their plan each night?
 
 ### N people, k colors, and without knowing k
 
 Here is a pernicious one I thought of as well. What happens if the prisoners don't know how many colors of hats there are? 
 
-> A mad wizard captures N people and presents to them a challenge. Each will lined up facing forwards so that they can only see the people in front of them, and each will be given a hat of some color. This means they can see the colors of the hats of everyone farther down the line, but not their own or anyone behind them. Then starting at the back of the line each must guess the color of their hat else be slain. The N prisoners will have time to agree upon a plan beforehand, but will have to do so without knowing how many colors of hats the wizard intends to use. Additionally should anyone guess a color of hat which no one is wearing, everyone is slain.
+> A mad wizard captures N people and presents to them a challenge. Each will be lined up facing forwards so that they can only see the people in front of them, and each will be given a hat of some color. This means they can see the colors of the hats of everyone farther down the line, but not their own or anyone behind them. Then starting at the back of the line each must guess the color of their hat else be slain. The N prisoners will have time to agree upon a plan beforehand, but will have to do so without knowing how many colors of hats the wizard intends to use. Additionally should anyone guess a color of hat which no one is wearing, everyone is slain.
 
 
-I think in this scenario the first prisoner is totally out of luck. Without knowing what his own hat looks like or even what distribution hats are pulled from all he can do is guess a color at random. His chances of survival are basicaly 0, and more the domain of philosophy than mathematics. The real challenge though is can that prisoner do anything to help everyone else.
+I think in this scenario the first prisoner is totally out of luck. Without knowing what his own hat looks like or even what distribution hats are pulled from all he can do is guess a color at random. His chances of survival are basically 0, and more the domain of philosophy than mathematics. The real challenge though is can that prisoner do anything to help everyone else.
 
 
 ## The Ultimate Challenge: N people, k colors, the Wizard is Listening and Some of You Are Colorblind
