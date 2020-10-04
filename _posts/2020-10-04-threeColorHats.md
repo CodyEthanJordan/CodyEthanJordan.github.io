@@ -36,6 +36,12 @@ Take the prospective of the second prisoner in the line, Mr. @-sign, `X@XXXXXXXX
 
 ### Solving Three Colors
 
+Taking it to the next level lets look at the three color variant.
+
+> A mad wizard captures 10 people and presents to them a challenge. Each will lined up facing forwards so that they can only see the people in front of them, and each will be given either a red, blue, or green hat. This means they can see the colors of the hats of everyone farther down the line, but not their own or anyone behind them. Then starting at the back of the line each must guess the color of their hat else be slain. The 10 prisoners will have time to agree upon a plan beforehand. What is their best plan and their chances of survival?
+
+
+
 ## Additional Variants
 
 Lets look at a few ways that the riddle could be expanded for fun.
@@ -62,6 +68,21 @@ In this scenario the first two prisoners would have a 50/50 chance of guessing c
 
 ### N people, k colors
 
+This is a direct generalization. What strategy can be used and what are the expected survival rates for N participants in a situation where there are k colors of hats?
+
+> A mad wizard captures N people and presents to them a challenge. Each will lined up facing forwards so that they can only see the people in front of them, and each will be given one of k colors of hat. This means they can see the colors of the hats of everyone farther down the line, but not their own or anyone behind them. Then starting at the back of the line each must guess the color of their hat else be slain. The N prisoners will have time to agree upon a plan beforehand.
+
 ### Repeated games
 
+Consider a variant where if anyone dies then the survivors are put back into the dungeon and are forced to play the game again the next day, and so on until either everyone is dead or they complete the challenge with everyone surviving. What are the expected number of survivors in this case.
+
+> A mad wizard captures N people and presents to them a challenge. Each will lined up facing forwards so that they can only see the people in front of them, and each will be given one of k colors of hat. This means they can see the colors of the hats of everyone farther down the line, but not their own or anyone behind them. Then starting at the back of the line each must guess the color of their hat else be slain, and if anyone is killed the survivors will be forced to play the same game the next day. The N prisoners will have time to agree upon a plan beforehand. What is the best plan they can come up with and how many survivors will make it on average? How do these values change if the wizard is able to listen in on their plan each night?
+
 ### N people, k colors, and without knowing k
+
+Here is a pernicious one I thought of as well. What happens if the prisoners don't know how many colors of hats there are? 
+
+> A mad wizard captures N people and presents to them a challenge. Each will lined up facing forwards so that they can only see the people in front of them, and each will be given a hat of some color. This means they can see the colors of the hats of everyone farther down the line, but not their own or anyone behind them. Then starting at the back of the line each must guess the color of their hat else be slain. The N prisoners will have time to agree upon a plan beforehand, but will have to do so without knowing how many colors of hats the wizard intends to use. Additionally should anyone guess a color of hat which no one is wearing, everyone is slain.
+
+
+I think in this scenario the first prisoner is totally out of luck. Without knowing what his own hat looks like or even what distribution hats are pulled from all he can do is guess a color at random. His chances of survival are basicaly 0, and more the domain of philosophy than mathematics. The real challenge though is can that prisoner do anything to help everyone else.
