@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Three Color Variant of Ten Hats Riddle"
-categories: math, games
+categories: math
 mathjax: true
 ---
 
@@ -126,7 +126,8 @@ From there on out things return to normal. The fourth prisoner will either hear 
 
 $S\[cb={1}\](P=10, C=1) = \frac{1}{2} S(P=10) + \frac{1}{2} = \frac{1}{2} 9.5 + \frac{1}{2} (\frac{1}{2} + 0 + (10 - 2)) = 9$
 
-Whats interesting is how even being at the start of the line that doesn't affect the outcome, as the expected survival count is 9 people no matter where the colorblind prisoner is.
+
+
 
 
 ### N people, k colors
