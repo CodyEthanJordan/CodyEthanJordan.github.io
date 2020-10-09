@@ -90,4 +90,9 @@ If the colors are unknown, meaning that the wizard can have any element of the p
 The first step away from being totally trivial this is where things begin to be interesting. Something I want to consider is how the original riddle assigns a particular importance to the first prisoner, and then treats the rest of them as being more or less the same by virtue of induction. While true in the two-color original version I'm not so sure this will hold up as we progress.
 
 #### Two Prisoners with k colors and a Random Wizard
-TODO
+
+The best strategy I can think of is 
+
+> The first prisoner guesses the color of the hat in front of him, the second prisoner repeats this guess
+
+Which seems intuitively true and is, somewhat trivially, equivalent to the answer to the traditional riddle by taking the parity of a single bit. What concerns me though is proving that this is in fact a member of the class of optimal solutions. Given a consistent proof strategy here this can then be generalized to the much more complex cases.
