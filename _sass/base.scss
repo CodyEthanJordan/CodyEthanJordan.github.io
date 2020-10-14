@@ -25,3 +25,11 @@ body {
     max-width: 1000px;
     margin: 0 auto;
 }
+
+blockquote {
+  border-top: .2em solid $darkGrey;
+  border-bottom: .2em solid $darkGrey;
+  color: #6a737d;
+  background: #cfcec8;
+  padding: 0 1em;
+}
