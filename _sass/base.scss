@@ -1,3 +1,6 @@
+@import "colors";
+
+
 @font-face {
 	font-family: "Universalis";
 	src: url("../assets/fonts/UniversalisADFStd-Regular.otf");
@@ -5,4 +8,20 @@
 
 * {
 	font-family: "Universalis", sans-serif;
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #FFFFFF url("../assets/images/theme/background.png") 0 0;
+  color: $darkGrey;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
 }
