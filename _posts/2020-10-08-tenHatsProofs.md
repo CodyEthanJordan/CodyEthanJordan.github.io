@@ -96,3 +96,15 @@ The best strategy I can think of is
 > The first prisoner guesses the color of the hat in front of him, the second prisoner repeats this guess
 
 Which seems intuitively true and is, somewhat trivially, equivalent to the answer to the traditional riddle by taking the parity of a single bit. What concerns me though is proving that this is in fact a member of the class of optimal solutions. Given a consistent proof strategy here this can then be generalized to the much more complex cases.
+
+##### Proof by Enumeration
+
+Define as optimal any strategy for which there do not exist any other strategies which have a higher expected survivor count. Optimizing this means finding some computable function $f$ where
+
+$$<S> = \sum_h f(h) w(h)$$
+
+Hmmzz
+
+##### Proof by Contradiction
+
+##### Proof by Informational Limits
