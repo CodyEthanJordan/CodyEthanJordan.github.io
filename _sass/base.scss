@@ -1,4 +1,5 @@
 @import "colors";
+@import "syntax";
 
 
 @font-face {
@@ -29,7 +30,8 @@ body {
 blockquote {
   border-top: .2em solid $darkGrey;
   border-bottom: .2em solid $darkGrey;
-  color: #6a737d;
-  background: #cfcec8;
+  background: #cfcec833;
   padding: 0 1em;
+  float: left;
+  width: 40%;
 }
